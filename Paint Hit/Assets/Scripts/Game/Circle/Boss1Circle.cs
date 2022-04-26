@@ -26,17 +26,9 @@ public class Boss1Circle : MonoBehaviour {
 
     public void Rotate() {
         switch (circleNumber) {
-            case 0:
-                iTween.RotateBy(transform.gameObject, iTween.Hash(
-                    "y", 1f,
-                    "speed", 100f,
-                    "easetype", iTween.EaseType.linear,
-                    "looptype", iTween.LoopType.loop
-                    ));
-                break;
             case 1:
                 iTween.RotateBy(transform.gameObject, iTween.Hash(
-                    "y", -1f,
+                    "y", 1f,
                     "speed", 100f,
                     "easetype", iTween.EaseType.linear,
                     "looptype", iTween.LoopType.loop
@@ -44,13 +36,21 @@ public class Boss1Circle : MonoBehaviour {
                 break;
             case 2:
                 iTween.RotateBy(transform.gameObject, iTween.Hash(
+                    "y", -1f,
+                    "speed", 100f,
+                    "easetype", iTween.EaseType.linear,
+                    "looptype", iTween.LoopType.loop
+                    ));
+                break;
+            case 3:
+                iTween.RotateBy(transform.gameObject, iTween.Hash(
                     "y", 1f,
                     "speed", 150f,
                     "easetype", iTween.EaseType.linear,
                     "looptype", iTween.LoopType.loop
                     ));
                 break;
-            case 3:
+            case 4:
                 if (Random.value < 0.5f) clockWise = 1;
                 else clockWise = -1;
 
@@ -62,7 +62,7 @@ public class Boss1Circle : MonoBehaviour {
                     "OnComplete", "Rotate"
                     ));
                 break;
-            case 4:
+            case 5:
                 if (Random.value < 0.5f) clockWise = 1;
                 else clockWise = -1;
 
